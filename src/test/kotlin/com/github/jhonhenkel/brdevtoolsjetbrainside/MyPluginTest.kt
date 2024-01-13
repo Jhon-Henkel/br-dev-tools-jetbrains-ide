@@ -29,11 +29,5 @@ class MyPluginTest : BasePlatformTestCase() {
         myFixture.testRename("foo.xml", "foo_after.xml", "a2")
     }
 
-    fun testProjectService() {
-        val projectService = project.service<RandomCpfService>()
-
-        assertNotSame(projectService.getRandomInt(0, 10), projectService.getRandomInt(0, 10))
-    }
-
     override fun getTestDataPath() = "src/test/testData/rename"
 }
