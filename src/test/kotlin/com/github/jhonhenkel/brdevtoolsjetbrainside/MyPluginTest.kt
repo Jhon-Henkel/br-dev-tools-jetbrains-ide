@@ -6,7 +6,7 @@ import com.intellij.psi.xml.XmlFile
 import com.intellij.testFramework.TestDataPath
 import com.intellij.testFramework.fixtures.BasePlatformTestCase
 import com.intellij.util.PsiErrorElementUtil
-import com.github.jhonhenkel.brdevtoolsjetbrainside.services.MyProjectService
+import com.github.jhonhenkel.brdevtoolsjetbrainside.services.RandomDataService
 
 @TestDataPath("\$CONTENT_ROOT/src/test/testData")
 class MyPluginTest : BasePlatformTestCase() {
@@ -30,9 +30,9 @@ class MyPluginTest : BasePlatformTestCase() {
     }
 
     fun testProjectService() {
-        val projectService = project.service<MyProjectService>()
+        val projectService = project.service<RandomDataService>()
 
-        assertNotSame(projectService.getRandomNumber(), projectService.getRandomNumber())
+        assertNotSame(projectService.getRandomInt(0, 10), projectService.getRandomInt(0, 10))
     }
 
     override fun getTestDataPath() = "src/test/testData/rename"

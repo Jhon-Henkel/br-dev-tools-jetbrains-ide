@@ -1,23 +1,16 @@
 package com.github.jhonhenkel.brdevtoolsjetbrainside.toolWindow
 
 import com.intellij.openapi.components.service
-import com.intellij.openapi.diagnostic.thisLogger
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.wm.ToolWindow
 import com.intellij.openapi.wm.ToolWindowFactory
 import com.intellij.ui.components.JBLabel
 import com.intellij.ui.components.JBPanel
 import com.intellij.ui.content.ContentFactory
-import com.github.jhonhenkel.brdevtoolsjetbrainside.MyBundle
-import com.github.jhonhenkel.brdevtoolsjetbrainside.services.MyProjectService
+import com.github.jhonhenkel.brdevtoolsjetbrainside.services.RandomDataService
 import javax.swing.JButton
 
-
 class MyToolWindowFactory : ToolWindowFactory {
-
-    init {
-        thisLogger().warn("Don't forget to remove all non-needed sample code files with their corresponding registration entries in `plugin.xml`.")
-    }
 
     override fun createToolWindowContent(project: Project, toolWindow: ToolWindow) {
         val myToolWindow = MyToolWindow(toolWindow)
@@ -29,17 +22,19 @@ class MyToolWindowFactory : ToolWindowFactory {
 
     class MyToolWindow(toolWindow: ToolWindow) {
 
-        private val service = toolWindow.project.service<MyProjectService>()
+        private val service = toolWindow.project.service<RandomDataService>()
 
         fun getContent() = JBPanel<JBPanel<*>>().apply {
-            val label = JBLabel(MyBundle.message("randomLabel", "?"))
+            val label = JBLabel("")
 
-            add(label)
-            add(JButton(MyBundle.message("shuffle")).apply {
+
+            add(JButton("Random CPF").apply {
                 addActionListener {
-                    label.text = MyBundle.message("randomLabel", service.getRandomNumber())
+                    label.text = service.generateRandomCpf()
                 }
             })
+
+            add(label)
         }
     }
 }
