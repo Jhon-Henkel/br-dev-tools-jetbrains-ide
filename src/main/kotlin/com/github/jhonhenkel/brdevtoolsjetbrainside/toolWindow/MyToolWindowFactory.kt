@@ -7,7 +7,7 @@ import com.intellij.openapi.wm.ToolWindowFactory
 import com.intellij.ui.components.JBLabel
 import com.intellij.ui.components.JBPanel
 import com.intellij.ui.content.ContentFactory
-import com.github.jhonhenkel.brdevtoolsjetbrainside.services.RandomDataService
+import com.github.jhonhenkel.brdevtoolsjetbrainside.services.RandomCpfService
 import javax.swing.JButton
 
 class MyToolWindowFactory : ToolWindowFactory {
@@ -22,7 +22,7 @@ class MyToolWindowFactory : ToolWindowFactory {
 
     class MyToolWindow(toolWindow: ToolWindow) {
 
-        private val service = toolWindow.project.service<RandomDataService>()
+        private val service = toolWindow.project.service<RandomCpfService>()
 
         fun getContent() = JBPanel<JBPanel<*>>().apply {
             val label = JBLabel("")

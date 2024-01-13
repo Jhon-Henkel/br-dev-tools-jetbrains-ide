@@ -1,13 +1,13 @@
 package services
 
-import com.github.jhonhenkel.brdevtoolsjetbrainside.services.RandomDataService
+import com.github.jhonhenkel.brdevtoolsjetbrainside.services.RandomCpfService
 import com.intellij.openapi.components.service
 import com.intellij.testFramework.fixtures.BasePlatformTestCase
 
-class RandomDataServiceUnitTest : BasePlatformTestCase() {
+class RandomCpfServiceUnitTest : BasePlatformTestCase() {
 
     fun testRandomCpf() {
-        val service = project.service<RandomDataService>()
+        val service = project.service<RandomCpfService>()
 
         val cpf = service.generateRandomCpf()
 

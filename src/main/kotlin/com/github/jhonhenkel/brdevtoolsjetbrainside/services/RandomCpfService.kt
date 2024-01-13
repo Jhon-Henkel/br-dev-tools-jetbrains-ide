@@ -5,7 +5,7 @@ import com.intellij.openapi.project.Project
 import kotlin.math.floor
 
 @Service(Service.Level.PROJECT)
-class RandomDataService(project: Project) {
+class RandomCpfService(project: Project) {
 
     fun generateRandomCpf(): String {
         var dv2 = 1
