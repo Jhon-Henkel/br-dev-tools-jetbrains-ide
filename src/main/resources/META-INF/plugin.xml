@@ -1,15 +1,15 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.jhonhenkel.brdevtoolsjetbrainside</id>
-    <name>br-dev-tools-jetbrains-ide Template</name>
-    <vendor>jhon-henkel</vendor>
+    <name>Br Dev Tools</name>
+    <vendor>Jhonatan Henkel</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.jhonhenkel.brdevtoolsjetbrainside.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <toolWindow factoryClass="com.github.jhonhenkel.brdevtoolsjetbrainside.toolWindow.MyToolWindowFactory" id="Br Dev Tools"/>
     </extensions>
 
     <applicationListeners>
