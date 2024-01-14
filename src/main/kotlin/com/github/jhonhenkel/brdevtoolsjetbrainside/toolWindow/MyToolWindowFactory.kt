@@ -33,42 +33,37 @@ class MyToolWindowFactory : ToolWindowFactory {
 
         fun getContent() = JBPanel<JBPanel<*>>().apply {
 
+            add(JBLabel("Ao clicar no botão, o valor será "))
+            add(JBLabel("copiado para a área de transferência."))
+
             val panel = JBPanel<JBPanel<*>>()
-            panel.setLayout(GridLayout(2,3))
-            panel.withPreferredSize(350, 50)
+            panel.setLayout(GridLayout(1,2))
+            panel.withPreferredSize(350, 25)
 
             val randomCpf = JBLabel("")
             panel.add(JButton("CPF").apply {
                 addActionListener {
                     randomCpf.text = cpfService.generateRandomCpf()
-                }
-            })
-            panel.add(randomCpf)
-            panel.add(JButton("Copiar").apply {
-                addActionListener {
                     val cpf = StringSelection(randomCpf.text)
                     val clipboard = Toolkit.getDefaultToolkit().systemClipboard
                     clipboard.setContents(cpf, null)
                 }
             })
+            panel.add(randomCpf)
 
             val panel2 = JBPanel<JBPanel<*>>()
-            panel2.setLayout(GridLayout(2,3))
-            panel2.withPreferredSize(350, 50)
+            panel2.setLayout(GridLayout(1,2))
+            panel2.withPreferredSize(350, 25)
             val randomCnpj = JBLabel("")
             panel2.add(JButton("CNPJ").apply {
                 addActionListener {
                     randomCnpj.text = cnpjService.generateRandomCnpj()
-                }
-            })
-            panel2.add(randomCnpj)
-            panel2.add(JButton("Copiar").apply {
-                addActionListener {
                     val cpf = StringSelection(randomCnpj.text)
                     val clipboard = Toolkit.getDefaultToolkit().systemClipboard
                     clipboard.setContents(cpf, null)
                 }
             })
+            panel2.add(randomCnpj)
 
             add(panel)
             add(panel2)
