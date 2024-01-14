@@ -2,7 +2,7 @@
 
 ![Build](https://github.com/Jhon-Henkel/br-dev-tools-jetbrains-ide/workflows/Build/badge.svg)
 [![Version](https://img.shields.io/jetbrains/plugin/v/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
+[![Downloads](https://img.shields.io/jetbrains/plugin/d/23526-br-dev-tools.svg)](https://plugins.jetbrains.com/plugin/23526-br-dev-tools)
 
 ## Sobre o projeto
 
