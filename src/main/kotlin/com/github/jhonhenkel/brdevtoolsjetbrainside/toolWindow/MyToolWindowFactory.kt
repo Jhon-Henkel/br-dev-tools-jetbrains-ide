@@ -1,6 +1,7 @@
 package com.github.jhonhenkel.brdevtoolsjetbrainside.toolWindow
 
 import com.github.jhonhenkel.brdevtoolsjetbrainside.services.RandomCnpjService
+import com.github.jhonhenkel.brdevtoolsjetbrainside.services.RandomCpfService
 import com.intellij.openapi.components.service
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.wm.ToolWindow
@@ -8,51 +9,69 @@ import com.intellij.openapi.wm.ToolWindowFactory
 import com.intellij.ui.components.JBLabel
 import com.intellij.ui.components.JBPanel
 import com.intellij.ui.content.ContentFactory
-import com.github.jhonhenkel.brdevtoolsjetbrainside.services.RandomCpfService
+import java.awt.GridLayout
+import java.awt.Toolkit
+import java.awt.datatransfer.StringSelection
 import javax.swing.JButton
 
 class MyToolWindowFactory : ToolWindowFactory {
 
     override fun createToolWindowContent(project: Project, toolWindow: ToolWindow) {
-        val myToolWindow = MyToolWindow(toolWindow)
+        val myToolWindow = BrDevToolsWindow(toolWindow)
 
-//        val contentCpf = ContentFactory.getInstance().createContent(myToolWindow.getContentCpf(), null, false)
-//        toolWindow.contentManager.addContent(contentCpf)
-
-        val contentCnpj = ContentFactory.getInstance().createContent(myToolWindow.getContentCnpj(), null, false)
-        toolWindow.contentManager.addContent(contentCnpj)
+        toolWindow.contentManager.addContent(
+            ContentFactory.getInstance().createContent(myToolWindow.getContent(), null, false)
+        )
     }
 
     override fun shouldBeAvailable(project: Project) = true
 
-    class MyToolWindow(toolWindow: ToolWindow) {
+    class BrDevToolsWindow(toolWindow: ToolWindow) {
 
         private val cpfService = toolWindow.project.service<RandomCpfService>()
         private val cnpjService = toolWindow.project.service<RandomCnpjService>()
 
+        fun getContent() = JBPanel<JBPanel<*>>().apply {
 
-        fun getContentCpf() = JBPanel<JBPanel<*>>().apply {
-            val label = JBLabel("")
+            val panel = JBPanel<JBPanel<*>>()
+            panel.setLayout(GridLayout(2,3))
+            panel.withPreferredSize(350, 50)
 
-            add(JButton("Random CPF").apply {
+            val randomCpf = JBLabel("")
+            panel.add(JButton("CPF").apply {
                 addActionListener {
-                    label.text = cpfService.generateRandomCpf()
+                    randomCpf.text = cpfService.generateRandomCpf()
+                }
+            })
+            panel.add(randomCpf)
+            panel.add(JButton("Copiar").apply {
+                addActionListener {
+                    val cpf = StringSelection(randomCpf.text)
+                    val clipboard = Toolkit.getDefaultToolkit().systemClipboard
+                    clipboard.setContents(cpf, null)
                 }
             })
 
-            add(label)
-        }
-
-        fun getContentCnpj() = JBPanel<JBPanel<*>>().apply {
-            val label = JBLabel("")
-
-            add(JButton("Random CNPJ").apply {
+            val panel2 = JBPanel<JBPanel<*>>()
+            panel2.setLayout(GridLayout(2,3))
+            panel2.withPreferredSize(350, 50)
+            val randomCnpj = JBLabel("")
+            panel2.add(JButton("CNPJ").apply {
                 addActionListener {
-                    label.text = cnpjService.generateRandomCnpj()
+                    randomCnpj.text = cnpjService.generateRandomCnpj()
+                }
+            })
+            panel2.add(randomCnpj)
+            panel2.add(JButton("Copiar").apply {
+                addActionListener {
+                    val cpf = StringSelection(randomCnpj.text)
+                    val clipboard = Toolkit.getDefaultToolkit().systemClipboard
+                    clipboard.setContents(cpf, null)
                 }
             })
 
-            add(label)
+            add(panel)
+            add(panel2)
         }
     }
 }
