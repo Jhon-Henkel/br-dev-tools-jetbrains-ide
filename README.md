@@ -9,11 +9,11 @@
 
 <!-- Plugin description -->
 
-Tendo a necessidade de testar dados fakes em crud, por exemplo, resolvi criar esse plugin que gerasse os dados para mim.
+Having the need to test raw fake data, for example, I decided to create this plugin that would generate the data for me.
 
 # Features
-- Gerador de CPF
-- Gerador de CNPJ
+- CPF Generator
+- CNPJ Generator
 
 <!-- Plugin description end -->
 
