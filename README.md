@@ -1,11 +1,11 @@
 # Br Dev Tools Jetbrains IDE
 
 ![Build](https://github.com/Jhon-Henkel/br-dev-tools-jetbrains-ide/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
+[![Version](https://img.shields.io/jetbrains/plugin/v/23526-br-dev-tools.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/23526-br-dev-tools.svg)](https://plugins.jetbrains.com/plugin/23526-br-dev-tools)
 [![wakatime](https://wakatime.com/badge/user/0a37bb0e-06f5-473c-8296-dc600e1c0d35/project/018cfa8c-e9f9-4156-a814-fbe49a9b99d6.svg)](https://wakatime.com/badge/user/0a37bb0e-06f5-473c-8296-dc600e1c0d35/project/018cfa8c-e9f9-4156-a814-fbe49a9b99d6)
 
-## Sobre o projeto
+## About this project
 
 <!-- Plugin description -->
 
@@ -26,7 +26,7 @@ Having the need to test raw fake data, for example, I decided to create this plu
   
 - Manually:
 
-  Download the [latest release](https://github.com/Jhon-Henkel/br-dev-tools-jetbrains-ide/releases/latest) and install it manually using
+  Download the [latest release](https://plugins.jetbrains.com/plugin/23526-br-dev-tools/edit/versions) and install it manually using
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
 ---

@@ -4,4 +4,4 @@
 
 ## [Unreleased]
 ### Added
-- Desenvolvido plugin para geração de dados fakes para testes de desenvolvimento
+- Developed plugin to generate fake data for development tests
