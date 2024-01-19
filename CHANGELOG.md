@@ -4,4 +4,4 @@
 
 ## [Unreleased]
 ### Added
-- Developed plugin to generate fake data for development tests
+- Icon for the extension

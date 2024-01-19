@@ -9,10 +9,17 @@
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.jhonhenkel.brdevtoolsjetbrainside.toolWindow.MyToolWindowFactory" id="Br Dev Tools"/>
+        <!--suppress  PluginXmlValidity -->
+        <toolWindow id="Br Dev Tools"
+                    secondary="false"
+                    icon="icons/iconWrench.svg"
+                    anchor="right"
+                    factoryClass="com.github.jhonhenkel.brdevtoolsjetbrainside.toolWindow.MyToolWindowFactory"
+                    order="after Notifications"/>
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.jhonhenkel.brdevtoolsjetbrainside.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
+        <listener class="com.github.jhonhenkel.brdevtoolsjetbrainside.listeners.MyApplicationActivationListener"
+                  topic="com.intellij.openapi.application.ApplicationActivationListener"/>
     </applicationListeners>
 </idea-plugin>
