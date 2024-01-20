@@ -5,3 +5,6 @@
 ## [Unreleased]
 ### Added
 - Icon for the extension
+
+### Changed
+- Layout improvements
