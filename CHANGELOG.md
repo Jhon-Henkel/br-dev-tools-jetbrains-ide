@@ -4,7 +4,4 @@
 
 ## [Unreleased]
 ### Added
-- Icon for the extension
-
-### Changed
-- Layout improvements
+- Added supprt to 24.* versions of Jetbrains IDEs
