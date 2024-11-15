@@ -4,4 +4,4 @@
 
 ## [Unreleased]
 ### Added
-- Added support to 242.* versions of Jetbrains IDEs
+- Added support to 243.* versions of Jetbrains IDEs
